@@ -6,37 +6,230 @@
 <title>ISO | Great things happen when the world agrees</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500&display=swap" rel="stylesheet">
 <style>
-:root{--deep:#06235a;--mid:#1458b8;--ink:#f4f8ff;--mute:#b6c9ea;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--deep:#041a45}}
-:root[data-theme="dark"]{--deep:#041a45}
-html{scroll-padding-top:env(safe-area-inset-top,0px)}
-*{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--deep);color:var(--ink);font-family:Barlow,system-ui,-apple-system,sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased}
-.hero{position:relative;height:540px;display:grid;place-items:center;padding:3.2rem 1.25rem 2rem;background:radial-gradient(80% 90% at 50% 45%,var(--mid) 0%,var(--deep) 72%);overflow:hidden}
-@media(max-width:768px){.hero{height:auto;min-height:480px;padding:4rem 1rem 2.2rem}}
-#particles-js,#cv{position:absolute;inset:0;width:100%;height:100%}
-#particles-js{z-index:1}
-#cv{z-index:2;pointer-events:none}
-nav.crumb{position:absolute;top:1rem;left:1.25rem;z-index:3;display:flex;flex-wrap:wrap;gap:.5rem;font-size:.95rem;color:var(--mute);opacity:0;animation:fade .8s .2s forwards}
-nav.crumb a{color:inherit;text-decoration:none;transition:color .2s}
-nav.crumb a:hover{color:#fff}
-nav.crumb a:focus-visible{outline:2px solid #fff;outline-offset:3px;border-radius:2px}
-nav.crumb b{color:#fff;font-weight:600}
-nav.crumb .sep{opacity:.6}
-.copy{position:relative;z-index:3;text-align:center;max-width:58rem;pointer-events:none}
-h1{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:clamp(2.6rem,7vw,5.6rem);line-height:1.02;text-shadow:0 2px 30px rgba(4,26,69,.9)}
-h1 .w{display:inline-block;margin:0 .14em;opacity:0;animation:up .8s forwards}
-.sub{margin-top:1.4rem;font-weight:500;font-size:clamp(.95rem,1.6vw,1.2rem);color:var(--mute);opacity:0;animation:up .8s 1.5s forwards;text-shadow:0 0 20px rgba(4,26,69,.9)}
-@keyframes up{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
-@keyframes fade{to{opacity:1}}
-.motto{position:relative;z-index:4;background:#fff;color:#0a2e6e;overflow:hidden;white-space:nowrap;padding:.85rem 0;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:clamp(1.05rem,2vw,1.45rem);letter-spacing:.06em}
-.track{display:flex;width:max-content;animation:slide var(--dur,35s) linear infinite}
-.grp{display:flex;flex-shrink:0}
-.grp em{font-style:normal;margin-right:2.5rem}
-@keyframes slide{from{transform:translateX(0)}to{transform:translateX(calc(-1*var(--dist,50%)))}}
-@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01s!important;animation-delay:0s!important;animation-iteration-count:1!important}.track{animation:none!important}}
+:root{
+  --deep:#041a45;
+  --mid:#0f4fae;
+  --ink:#f4f8ff;
+  --mute:#b6c9ea;
+  --link:#0f4fae;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media(prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --deep:#031438;
+  }
+}
+:root[data-theme="dark"]{
+  --deep:#031438;
+}
+html{
+  scroll-padding-top:env(safe-area-inset-top,0px);
+}
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+body{
+  background:var(--deep);
+  color:var(--ink);
+  font-family:Barlow,system-ui,-apple-system,sans-serif;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* Compact Banner Layout matching reference standard */
+.hero{
+  position:relative;
+  height:540px;
+  min-height:540px;
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+  padding:3.2rem 1.25rem 2.2rem;
+  background:radial-gradient(70% 80% at 50% 38%,#16529f 0%,var(--deep) 72%);
+  overflow:hidden;
+}
+
+@media(max-width:1200px){
+  .hero{
+    height:520px;
+    min-height:520px;
+  }
+}
+
+@media(max-width:767.98px){
+  .hero{
+    height:auto;
+    min-height:480px;
+    padding:3.2rem 1rem 1.8rem;
+  }
+}
+
+#particles-js,#cv{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+}
+#particles-js{
+  z-index:1;
+  pointer-events:auto;
+}
+#cv{
+  z-index:2;
+  pointer-events:none;
+}
+
+nav.crumb{
+  position:absolute;
+  top:1rem;
+  left:1.25rem;
+  z-index:3;
+  display:flex;
+  flex-wrap:wrap;
+  gap:.5rem;
+  font-size:.95rem;
+  color:var(--mute);
+  opacity:0;
+  animation:fade .8s .2s forwards;
+  pointer-events:auto;
+}
+nav.crumb a{
+  color:inherit;
+  text-decoration:none;
+  transition:color .2s;
+}
+nav.crumb a:hover{
+  color:#fff;
+}
+nav.crumb a:focus-visible{
+  outline:2px solid #fff;
+  outline-offset:3px;
+  border-radius:2px;
+}
+nav.crumb b{
+  color:#fff;
+  font-weight:600;
+}
+nav.crumb .sep{
+  opacity:.6;
+  user-select:none;
+}
+@keyframes fade{
+  to{opacity:1;}
+}
+
+/* Infinite Standards Marquee (Pure CSS Motion, GPU Accelerated, Reference Architecture) */
+.ticker-track-container{
+  position:relative;
+  z-index:4;
+  width:100%;
+  height:72px;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  background:#fff;
+  color:#0a2e6e;
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:700;
+  font-size:clamp(1.1rem,2vw,1.5rem);
+  letter-spacing:.06em;
+}
+
+@media(max-width:1200px){
+  .ticker-track-container{
+    height:68px;
+  }
+}
+
+@media(max-width:767.98px){
+  .ticker-track-container{
+    height:60px;
+  }
+}
+
+.ticker-track{
+  display:flex;
+  width:max-content;
+  align-items:center;
+  white-space:nowrap;
+  will-change:transform;
+  transform:translate3d(0,0,0);
+  backface-visibility:hidden;
+  animation:tickerSlide var(--dur,60s) linear infinite;
+}
+
+@keyframes tickerSlide{
+  from{
+    transform:translate3d(0,0,0);
+  }
+  to{
+    transform:translate3d(calc(-1 * var(--dist, 1000px)),0,0);
+  }
+}
+
+.ticker-group{
+  display:flex;
+  align-items:center;
+  flex-shrink:0;
+  gap:1.6rem;
+  padding-right:1.6rem;
+}
+.ticker-group,
+.ticker-group a,
+.ticker-group svg{
+  flex-shrink:0;
+}
+.ticker-group a{
+  color:inherit;
+  text-decoration:none;
+  padding:.1rem .15rem;
+  border-bottom:2px solid transparent;
+  transition:color .2s,border-color .2s;
+}
+.ticker-group a:hover{
+  color:var(--link);
+  border-color:var(--link);
+}
+.ticker-group a:focus-visible{
+  outline:2px solid var(--link);
+  outline-offset:3px;
+  border-radius:2px;
+}
+.ticker-group svg{
+  width:1.25em;
+  height:1.25em;
+  color:var(--link);
+}
+
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    animation-duration:.01s!important;
+    animation-delay:0s!important;
+    animation-iteration-count:1!important;
+    transition-duration:.01s!important;
+  }
+  .ticker-track{
+    animation:none!important;
+  }
+  .ticker-track-container{
+    overflow-x:auto;
+  }
+}
+
+.sr{
+  position:absolute;
+  width:1px;
+  height:1px;
+  overflow:hidden;
+  clip:rect(0 0 0 0);
+  white-space:nowrap;
+}
 </style>
 </head>
 <body>
@@ -48,107 +241,849 @@ h1 .w{display:inline-block;margin:0 .14em;opacity:0;animation:up .8s forwards}
     <a href="#">Standards</a><span class="sep" aria-hidden="true">&gt;</span>
     <b>ISO</b>
   </nav>
-  <div class="copy">
-    <h1 id="title" aria-label="Great things happen when the world agrees"></h1>
-    <p class="sub">International Organization for Standardization</p>
-  </div>
+  <h1 class="sr">Great things happen when the world agrees</h1>
 </section>
-<div class="motto" id="identity" aria-label="ISO in English, French and Russian"><div class="track" id="track"></div></div>
+<div class="ticker-track-container" id="identity" aria-label="ISO standards we offer">
+  <div class="ticker-track" id="ticker-track"></div>
+</div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
 <script>
-(function(){
-  const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+/* ==========================================================================
+   Configurable Constants
+   ========================================================================== */
+const ISO_STANDARD = '27001';
 
-  /* Slogan, word by word */
-  const T=document.getElementById('title');
-  'Great things happen when the world agrees.'.split(' ').forEach((wd,i)=>{
-    const s=document.createElement('span');s.className='w';s.textContent=wd;
-    if(reduced){s.style.opacity=1;s.style.transform='none'}else s.style.animationDelay=(0.6+i*0.12)+'s';
-    T.appendChild(s);
-  });
-
-  /* Marquee */
-  const items=['Great things happen when the world agrees','\u2605','International Organization for Standardization','\u2605','Organisation internationale de normalisation','\u2605','Международная организация по стандартизации','\u2605'];
-  const mq=document.getElementById('identity'),tr=document.getElementById('track');
-  const grp=(h)=>{let g=`<div class="grp"${h?' aria-hidden="true"':''}>`;items.forEach(x=>g+=`<em>${x}</em>`);return g+'</div>'};
-  let lw=0;
-  function build(){
-    const w=mq.clientWidth;if(w===lw&&tr.children.length)return;lw=w;
-    tr.innerHTML=grp(false)+grp(true);
-    const gw=tr.firstElementChild.offsetWidth;
-    tr.style.setProperty('--dist',gw+'px');tr.style.setProperty('--dur',(gw/70).toFixed(2)+'s');
+/* ==========================================================================
+   Module 1: Particle System (Clean Single-Instance Lifecycle, Zero Stutter)
+   ========================================================================== */
+function pauseParticles() {
+  if (window.pJSDom && window.pJSDom.length > 0) {
+    window.pJSDom.forEach(d => {
+      if (d?.pJS?.fn?.drawAnimFrame) {
+        (window.cancelRequestAnimFrame || window.cancelAnimationFrame)(d.pJS.fn.drawAnimFrame);
+        d.pJS.fn.drawAnimFrame = null;
+      }
+    });
   }
-  build();
+}
 
-  /* Particles, same behaviour as the previous hero */
-  function pjs(){
-    const w=innerWidth,mobile=w<768,tablet=w>=768&&w<=1200;
-    const count=mobile?16:tablet?26:36,dist=mobile?80:tablet?100:120;
-    const canHover=matchMedia('(hover: hover)').matches&&!reduced&&!mobile;
-    try{
-      if(window.pJSDom&&pJSDom.length){pJSDom.forEach(p=>p.pJS.fn.vendors.destroypJS());window.pJSDom=[]}
-      particlesJS('particles-js',{
-        particles:{
-          number:{value:count,density:{enable:false}},
-          color:{value:['#ffffff','#bcd4ff','#7fb0ff']},
-          shape:{type:['circle','star'],polygon:{nb_sides:5}},
-          opacity:{value:.7,random:true,anim:{enable:!reduced,speed:1,opacity_min:.25,sync:false}},
-          size:{value:3.5,random:true,anim:{enable:!reduced,speed:2,size_min:1,sync:false}},
-          line_linked:{enable:w>=480,distance:dist,color:'#a9c8ff',opacity:.35,width:1},
-          move:{enable:!reduced,speed:mobile?1.6:2,direction:'none',random:false,straight:false,out_mode:'out',bounce:false}
+function resumeParticles() {
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (prefersReducedMotion) return;
+  if (window.pJSDom && window.pJSDom.length > 0) {
+    window.pJSDom.forEach(d => {
+      if (d?.pJS && !d.pJS.fn.drawAnimFrame && d.pJS.particles?.move?.enable) {
+        d.pJS.fn.drawAnimFrame = (window.requestAnimFrame || window.requestAnimationFrame)(d.pJS.fn.vendors.draw);
+      }
+    });
+  }
+}
+
+const ParticleManager = {
+  currentTier: null,
+  currentSub480: null,
+
+  getTier() {
+    const w = window.innerWidth;
+    if (w > 1200) return 'desktop';
+    if (w >= 768) return 'tablet';
+    return 'mobile';
+  },
+
+  getConfig() {
+    const w = window.innerWidth;
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const canHover = window.matchMedia ? window.matchMedia("(hover: hover)").matches : false;
+    const hoverEnable = !prefersReducedMotion && canHover && w >= 768;
+    const linkEnable = w >= 480;
+
+    const count = w < 768 ? 16 : w <= 1200 ? 26 : 36;
+    const speed = w < 768 ? 1.8 : 2.2;
+    const linkDist = w < 768 ? 80 : w <= 1200 ? 100 : 120;
+    const area = w < 768 ? 800 : 900;
+
+    return {
+      particles: {
+        number: {
+          value: count,
+          density: {
+            enable: true,
+            value_area: area
+          }
         },
-        interactivity:{detect_on:'canvas',events:{onhover:{enable:canHover,mode:'grab'},onclick:{enable:false},resize:false},modes:{grab:{distance:160,line_linked:{opacity:.8}}}},
-        retina_detect:false
+        color: {
+          value: ['#ffffff', '#bcd4ff', '#ff9a1f']
+        },
+        shape: {
+          type: 'circle'
+        },
+        opacity: {
+          value: 0.5
+        },
+        size: {
+          value: 3,
+          random: true
+        },
+        line_linked: {
+          enable: linkEnable,
+          distance: linkDist,
+          color: '#a9c8ff',
+          opacity: 0.35,
+          width: 1
+        },
+        move: {
+          enable: !prefersReducedMotion,
+          speed: prefersReducedMotion ? 0 : speed,
+          direction: 'none',
+          out_mode: 'out'
+        }
+      },
+      interactivity: {
+        detect_on: 'canvas',
+        events: {
+          onhover: {
+            enable: hoverEnable,
+            mode: 'repulse'
+          },
+          onclick: {
+            enable: false
+          },
+          resize: false
+        },
+        modes: {
+          repulse: {
+            distance: 180,
+            duration: 0.4
+          }
+        }
+      },
+      retina_detect: false
+    };
+  },
+
+  init(force = false) {
+    const tier = this.getTier();
+    const sub480 = window.innerWidth < 480;
+    if (!force && tier === this.currentTier && sub480 === this.currentSub480) return;
+    this.currentTier = tier;
+    this.currentSub480 = sub480;
+
+    try {
+      if (window.pJSDom && window.pJSDom.length > 0) {
+        for (let i = window.pJSDom.length - 1; i >= 0; i--) {
+          if (window.pJSDom[i]?.pJS?.fn?.drawAnimFrame) {
+            (window.cancelRequestAnimFrame || window.cancelAnimationFrame)(window.pJSDom[i].pJS.fn.drawAnimFrame);
+            window.pJSDom[i].pJS.fn.drawAnimFrame = null;
+          }
+        }
+        window.pJSDom = [];
+      }
+      const container = document.getElementById("particles-js");
+      if (container) {
+        container.innerHTML = '';
+      }
+      particlesJS('particles-js', this.getConfig());
+    } catch (e) {
+      console.warn('particlesJS initialization suppressed:', e);
+    }
+  },
+  lastW: 0,
+  lastH: 0,
+
+  onResize() {
+    const tier = this.getTier();
+    const sub480 = window.innerWidth < 480;
+    if (tier !== this.currentTier || sub480 !== this.currentSub480) {
+      this.init(true);
+    } else {
+      // Sync canvas dimensions within same tier without destroying running particles
+      if (window.pJSDom && window.pJSDom[0]?.pJS) {
+        const pJS = window.pJSDom[0].pJS;
+        if (pJS.canvas?.el) {
+          const newW = pJS.canvas.el.offsetWidth;
+          const newH = pJS.canvas.el.offsetHeight;
+          if (newW !== this.lastW || newH !== this.lastH) {
+            this.lastW = newW;
+            this.lastH = newH;
+            pJS.canvas.w = newW;
+            pJS.canvas.h = newH;
+            pJS.canvas.el.width = newW;
+            pJS.canvas.el.height = newH;
+          }
+        }
+      }
+    }
+  },
+
+  pause() {
+    pauseParticles();
+  },
+
+  resume() {
+    resumeParticles();
+  }
+};
+
+/* ==========================================================================
+   Module 2: Custom ISO Canvas Engine (Split Globe, Rings, Bokeh, Capped FPS)
+   ========================================================================== */
+class IsoCanvasEngine {
+  constructor(canvas, hero) {
+    this.cv = canvas;
+    this.ctx = canvas.getContext('2d');
+    this.hero = hero;
+    this.rafId = null;
+    this.running = false;
+    this.heroVisible = true;
+    this.reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    this.W = 0;
+    this.H = 0;
+    this.lastW = 0;
+    this.lastH = 0;
+    this.dpr = 1;
+    this.heroRect = { left: 0, top: 0, width: 0, height: 0 };
+
+    // Responsive Tiers & Precomputed Geometry Lookups
+    this.tier = 'desktop';
+    this.isMobile = false;
+    this.isTablet = false;
+    this.maxGlobeRatio = 0.34;
+    this.lookups = {
+      desktop: this.buildLookup(6),
+      tablet: this.buildLookup(8),
+      mobile: this.buildLookup(12)
+    };
+    this.activeLookup = this.lookups.desktop;
+
+    // Single-Pass Reusable Geometry Buffers (Float32Array for zero GC in hot loop)
+    // 5 latitude rings + 8 longitude circles: max 780 segments * 4 = 3120 floats
+    this.frontBuf = new Float32Array(4096);
+    this.backBuf = new Float32Array(4096);
+    this.frontCount = 0;
+    this.backCount = 0;
+
+    // Precomputed Mathematical & Ring Constants
+    this.D = Math.PI / 180;
+    this.TILT = 0.3;
+    this.cosTilt = Math.cos(this.TILT);
+    this.sinTilt = Math.sin(this.TILT);
+    this.dashedRingScales = [1.28, 1.6];
+
+    // FPS Throttling
+    this.targetFPS = 30;
+    this.frameInterval = 1000 / 30;
+    this.lastFrameTime = 0;
+
+    // Cached Text Metrics & Fonts (Zero per-frame allocations)
+    this.cachedR = 0;
+    this.cachedCy = 0;
+    this.isoFontSize = 0;
+    this.numberFontSize = 0;
+    this.isoCap = 0;
+    this.numCap = 0;
+    this.blockHeight = 0;
+    this.band = 0;
+    this.tracking = 0;
+    this.isoFont = '';
+    this.numberFont = '';
+    this.mI = 0;
+    this.mS = 0;
+    this.mO = 0;
+    this.isoTotalRawWidth = 0;
+    this.isoBaseline = 0;
+    this.numberBaseline = 0;
+
+    this.bokeh = [];
+    this.t0 = performance.now();
+    this.boundFrame = this.frame.bind(this);
+
+    this.initBokeh();
+  }
+
+  buildLookup(stepDeg) {
+    const D = Math.PI / 180;
+    const lats = [];
+    for (let lat = -60; lat <= 60; lat += 30) {
+      const latRad = lat * D;
+      const cosLat = Math.cos(latRad);
+      const sinLat = Math.sin(latRad);
+      const points = [];
+      for (let lo = 0; lo <= 360; lo += stepDeg) {
+        const lonRad = lo * D;
+        points.push({
+          sinLo: Math.sin(lonRad),
+          cosLo: Math.cos(lonRad)
+        });
+      }
+      lats.push({ cosLat, sinLat, points });
+    }
+
+    const lons = [];
+    for (let lon = 0; lon < 180; lon += 22.5) {
+      const points = [];
+      for (let la = -90; la <= 270; la += stepDeg) {
+        const latNorm = la > 90 ? 180 - la : la;
+        const lonOffset = la > 90 ? 180 : 0;
+        const latRad = latNorm * D;
+        const baseLonRad = (lon + lonOffset) * D;
+        points.push({
+          cosLat: Math.cos(latRad),
+          sinLat: Math.sin(latRad),
+          sinLonBase: Math.sin(baseLonRad),
+          cosLonBase: Math.cos(baseLonRad)
+        });
+      }
+      lons.push({ points });
+    }
+    return { lats, lons };
+  }
+
+  initBokeh() {
+    this.bokeh = [];
+    for (let i = 0; i < 14; i++) {
+      const isAmber = Math.random() < 0.4;
+      this.bokeh.push({
+        a: Math.random() * 6.28,
+        r: 1.25 + Math.random() * 1.6,
+        s: (Math.random() - 0.5) * 0.08,
+        sz: 2 + Math.random() * 4,
+        isAmber: isAmber
       });
-    }catch(e){console.warn(e)}
+    }
+    this.initBokehSprites();
   }
-  pjs();
 
-  /* Wireframe globe: parallels and meridians, slow spin */
-  const cv=document.getElementById('cv'),hero=document.getElementById('hero'),ctx=cv.getContext('2d');
-  let W,H,dpr,raf=null,visible=true,t0=performance.now(),last=0;
-  const TILT=.38;
-  function size(){
-    dpr=Math.min(devicePixelRatio||1,1.5);W=hero.clientWidth;H=hero.clientHeight;
-    cv.width=W*dpr;cv.height=H*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);
-    if(reduced)draw(t0+10000);
+  initBokehSprites() {
+    const makeSprite = (rgb) => {
+      const c = document.createElement('canvas');
+      c.width = 64;
+      c.height = 64;
+      const ctx = c.getContext('2d');
+      const g = ctx.createRadialGradient(32, 32, 0, 32, 32, 32);
+      g.addColorStop(0, `rgba(${rgb},0.9)`);
+      g.addColorStop(1, `rgba(${rgb},0)`);
+      ctx.fillStyle = g;
+      ctx.beginPath();
+      ctx.arc(32, 32, 32, 0, 6.28);
+      ctx.fill();
+      return c;
+    };
+    this.amberSprite = makeSprite('255,154,31');
+    this.cyanSprite = makeSprite('140,200,255');
   }
-  function proj(lat,lon,rot,R,cx,cy){
-    const x=Math.cos(lat)*Math.sin(lon+rot),y=Math.sin(lat),z=Math.cos(lat)*Math.cos(lon+rot);
-    const y2=y*Math.cos(TILT)-z*Math.sin(TILT),z2=y*Math.sin(TILT)+z*Math.cos(TILT);
-    return [cx+x*R,cy-y2*R,z2];
-  }
-  function line(pts){
-    for(let i=1;i<pts.length;i++){
-      const a=pts[i-1],b=pts[i],front=(a[2]+b[2])/2>0;
-      ctx.strokeStyle=front?'rgba(255,255,255,.34)':'rgba(255,255,255,.07)';
-      ctx.beginPath();ctx.moveTo(a[0],a[1]);ctx.lineTo(b[0],b[1]);ctx.stroke();
+
+  resize(force = false) {
+    const newW = this.hero.clientWidth;
+    const newH = this.hero.clientHeight;
+    if (!force && newW === this.lastW && newH === this.lastH) return;
+    this.lastW = newW;
+    this.lastH = newH;
+
+    const isMobile = window.innerWidth < 768;
+    const isTablet = window.innerWidth <= 1200 && !isMobile;
+
+    this.isMobile = isMobile;
+    this.isTablet = isTablet;
+    this.tier = isMobile ? 'mobile' : (isTablet ? 'tablet' : 'desktop');
+    this.activeLookup = this.lookups[this.tier];
+    this.maxGlobeRatio = isMobile ? 0.30 : 0.34;
+
+    this.targetFPS = isMobile ? 22 : (isTablet ? 26 : 30);
+    this.frameInterval = 1000 / this.targetFPS;
+    this.dpr = Math.min(window.devicePixelRatio || 1, isMobile ? 1.25 : 1.5);
+
+    this.W = newW;
+    this.H = newH;
+    this.heroRect = this.hero.getBoundingClientRect();
+
+    this.cv.width = Math.round(this.W * this.dpr);
+    this.cv.height = Math.round(this.H * this.dpr);
+    this.ctx.setTransform(this.dpr, 0, 0, this.dpr, 0, 0);
+
+    // Invalidate cached text metrics so next render recalculates cleanly
+    this.cachedR = 0;
+    this.cachedCy = 0;
+
+    if (this.reducedMotion) {
+      this.renderStatic();
     }
   }
-  function draw(now){
-    const t=(now-t0)/1000;ctx.clearRect(0,0,W,H);
-    const p=reduced?1:Math.min(1,t/1.6),e=1-Math.pow(1-p,3);
-    const R=Math.min(W*.42,H*.46)*e,cx=W/2,cy=H/2,rot=reduced?0:t*.12;
-    if(R<2)return;
-    ctx.lineWidth=1.1;
-    const D=Math.PI/180;
-    for(let lat=-60;lat<=60;lat+=30){const pts=[];for(let lo=0;lo<=360;lo+=6)pts.push(proj(lat*D,lo*D,rot,R,cx,cy));line(pts)}
-    for(let lon=0;lon<180;lon+=22.5){
-      const pts=[];for(let la=-90;la<=270;la+=6)pts.push(proj((la>90?180-la:la)*D,(lon+(la>90?180:0))*D,rot,R,cx,cy));line(pts);
-    }
-    ctx.strokeStyle='rgba(255,255,255,.5)';ctx.lineWidth=1.6;
-    ctx.beginPath();ctx.arc(cx,cy,R,0,6.28);ctx.stroke();
-  }
-  function frame(now){if(!visible)return;raf=requestAnimationFrame(frame);if(now-last<33)return;last=now;draw(now)}
-  function start(){if(reduced){draw(t0+10000);return}if(!raf)raf=requestAnimationFrame(frame)}
-  function stop(){if(raf){cancelAnimationFrame(raf);raf=null}}
-  size();start();
 
-  let rr=null,tier=null;
-  addEventListener('resize',()=>{cancelAnimationFrame(rr);rr=requestAnimationFrame(()=>{size();build();pjs()})},{passive:true});
-  if('IntersectionObserver' in window)new IntersectionObserver(es=>{visible=es[0].isIntersecting;visible?start():stop()},{threshold:[0,.05]}).observe(hero);
-  document.addEventListener('visibilitychange',()=>{document.hidden?stop():(visible&&start())});
+  updateTextMetrics(R, cy) {
+    this.cachedR = R;
+    this.cachedCy = cy;
+
+    this.isoFontSize = R * 0.54;
+    this.numberFontSize = R * 0.20;
+    const lineGap = R * 0.05;
+
+    this.isoCap = this.isoFontSize * 0.70;
+    this.numCap = this.numberFontSize * 0.72;
+    this.blockHeight = this.isoCap + lineGap + this.numCap;
+    this.band = this.blockHeight / 2 + R * 0.085;
+
+    this.isoBaseline = cy - this.blockHeight / 2 + this.isoCap;
+    this.numberBaseline = cy + this.blockHeight / 2;
+
+    this.isoFont = `${this.isoFontSize}px "Alfa Slab One", "Rockwell Extra Bold", "Rockwell", Georgia, serif`;
+    this.numberFont = `700 ${this.numberFontSize}px "Barlow Condensed", sans-serif`;
+
+    this.ctx.font = this.isoFont;
+    this.tracking = R * 0.21;
+    this.mI = this.ctx.measureText('I').width;
+    this.mS = this.ctx.measureText('S').width;
+    this.mO = this.ctx.measureText('O').width;
+    this.isoTotalRawWidth = this.mI + this.mS + this.mO + this.tracking * 2;
+  }
+
+  projectGlobe(cx, cy, R, rot) {
+    const sinRot = Math.sin(rot);
+    const cosRot = Math.cos(rot);
+    const cosTilt = this.cosTilt;
+    const sinTilt = this.sinTilt;
+
+    let fIdx = 0;
+    let bIdx = 0;
+    const fBuf = this.frontBuf;
+    const bBuf = this.backBuf;
+    const lookup = this.activeLookup;
+
+    // 1. Latitudes
+    const lats = lookup.lats;
+    const latsLen = lats.length;
+    for (let i = 0; i < latsLen; i++) {
+      const ring = lats[i];
+      const cosLat = ring.cosLat;
+      const sinLat = ring.sinLat;
+      const pts = ring.points;
+      const len = pts.length;
+
+      let prevX = 0, prevY = 0, prevZ = 0;
+      for (let j = 0; j < len; j++) {
+        const p = pts[j];
+        const sinLon = p.sinLo * cosRot + p.cosLo * sinRot;
+        const cosLon = p.cosLo * cosRot - p.sinLo * sinRot;
+
+        const x = cosLat * sinLon;
+        const y = sinLat;
+        const z = cosLat * cosLon;
+
+        const px = cx + x * R;
+        const py = cy - (y * cosTilt - z * sinTilt) * R;
+        const pz = y * sinTilt + z * cosTilt;
+
+        if (j > 0) {
+          if ((prevZ + pz) > 0) {
+            fBuf[fIdx++] = prevX;
+            fBuf[fIdx++] = prevY;
+            fBuf[fIdx++] = px;
+            fBuf[fIdx++] = py;
+          } else {
+            bBuf[bIdx++] = prevX;
+            bBuf[bIdx++] = prevY;
+            bBuf[bIdx++] = px;
+            bBuf[bIdx++] = py;
+          }
+        }
+        prevX = px;
+        prevY = py;
+        prevZ = pz;
+      }
+    }
+
+    // 2. Longitudes
+    const lons = lookup.lons;
+    const lonsLen = lons.length;
+    for (let i = 0; i < lonsLen; i++) {
+      const pts = lons[i].points;
+      const len = pts.length;
+
+      let prevX = 0, prevY = 0, prevZ = 0;
+      for (let j = 0; j < len; j++) {
+        const p = pts[j];
+        const sinLon = p.sinLonBase * cosRot + p.cosLonBase * sinRot;
+        const cosLon = p.cosLonBase * cosRot - p.sinLonBase * sinRot;
+
+        const x = p.cosLat * sinLon;
+        const y = p.sinLat;
+        const z = p.cosLat * cosLon;
+
+        const px = cx + x * R;
+        const py = cy - (y * cosTilt - z * sinTilt) * R;
+        const pz = y * sinTilt + z * cosTilt;
+
+        if (j > 0) {
+          if ((prevZ + pz) > 0) {
+            fBuf[fIdx++] = prevX;
+            fBuf[fIdx++] = prevY;
+            fBuf[fIdx++] = px;
+            fBuf[fIdx++] = py;
+          } else {
+            bBuf[bIdx++] = prevX;
+            bBuf[bIdx++] = prevY;
+            bBuf[bIdx++] = px;
+            bBuf[bIdx++] = py;
+          }
+        }
+        prevX = px;
+        prevY = py;
+        prevZ = pz;
+      }
+    }
+
+    this.frontCount = fIdx;
+    this.backCount = bIdx;
+  }
+
+  render(now) {
+    const t = (now - this.t0) / 1000;
+    this.ctx.clearRect(0, 0, this.W, this.H);
+
+    const p = this.reducedMotion ? 1 : Math.min(1, t / 1.5);
+    const e = this.reducedMotion ? 1 : (1 - Math.pow(1 - p, 3));
+    const cx = this.W / 2;
+    const cy = this.H * 0.5;
+
+    // Viewport-aware responsive globe scaling (cached ratio)
+    const maxRatio = this.maxGlobeRatio;
+    const R = Math.min(this.W * maxRatio, this.H * maxRatio) * e;
+    if (R < 3) return;
+
+    // 1. Rings exiting from globe
+    this.ctx.lineWidth = 1.2;
+    for (let k = 0; k < 5; k++) {
+      const ph = this.reducedMotion ? (k + 0.5) / 5 : ((t * 0.16 + k / 5) % 1);
+      this.ctx.strokeStyle = `rgba(170,210,255,${(1 - ph) * 0.38})`;
+      this.ctx.beginPath();
+      this.ctx.arc(cx, cy, R * (1.05 + ph * 2.1), 0, 6.28);
+      this.ctx.stroke();
+    }
+
+    // 2. Dashed accent rings (reusable array constant, zero per-frame allocation)
+    this.ctx.setLineDash([3, 9]);
+    this.ctx.lineDashOffset = this.reducedMotion ? 0 : -t * 8;
+    const scales = this.dashedRingScales;
+    for (let i = 0; i < scales.length; i++) {
+      this.ctx.strokeStyle = `rgba(190,220,255,${0.3 - i * 0.08})`;
+      this.ctx.beginPath();
+      this.ctx.arc(cx, cy, R * scales[i], 0, 6.28);
+      this.ctx.stroke();
+    }
+    this.ctx.setLineDash([]);
+
+    // 3. Bokeh dots on the rings (using pre-rendered offscreen sprites)
+    const bokehLen = this.bokeh.length;
+    for (let i = 0; i < bokehLen; i++) {
+      const b = this.bokeh[i];
+      const a = b.a + (this.reducedMotion ? 0 : t * b.s);
+      const x = cx + Math.cos(a) * R * b.r;
+      const y = cy + Math.sin(a) * R * b.r;
+      const sz = b.sz * 4.4;
+      const sprite = b.isAmber ? this.amberSprite : this.cyanSprite;
+      this.ctx.drawImage(sprite, x - sz / 2, y - sz / 2, sz, sz);
+    }
+
+    // 4. Split globe: update cached text metrics & band if R or cy changed
+    if (R !== this.cachedR || cy !== this.cachedCy) {
+      this.updateTextMetrics(R, cy);
+    }
+
+    const band = this.band;
+    const rot = this.reducedMotion ? 0 : t * 0.12;
+
+    // Single-pass globe projection and classification into front/back buffers
+    this.projectGlobe(cx, cy, R, rot);
+
+    this.ctx.save();
+    this.ctx.beginPath();
+    this.ctx.rect(0, 0, this.W, cy - band);
+    this.ctx.rect(0, cy + band, this.W, this.H - cy - band);
+    this.ctx.clip();
+    this.ctx.shadowColor = 'rgba(140,200,255,.9)';
+    this.ctx.shadowBlur = 8;
+    this.ctx.lineWidth = 1.2;
+
+    // Draw all back lines from pre-projected buffer
+    const bBuf = this.backBuf;
+    const bCount = this.backCount;
+    this.ctx.strokeStyle = 'rgba(235,245,255,.1)';
+    this.ctx.beginPath();
+    for (let i = 0; i < bCount; i += 4) {
+      this.ctx.moveTo(bBuf[i], bBuf[i + 1]);
+      this.ctx.lineTo(bBuf[i + 2], bBuf[i + 3]);
+    }
+    this.ctx.stroke();
+
+    // Draw all front lines from pre-projected buffer
+    const fBuf = this.frontBuf;
+    const fCount = this.frontCount;
+    this.ctx.strokeStyle = 'rgba(235,245,255,.55)';
+    this.ctx.beginPath();
+    for (let i = 0; i < fCount; i += 4) {
+      this.ctx.moveTo(fBuf[i], fBuf[i + 1]);
+      this.ctx.lineTo(fBuf[i + 2], fBuf[i + 3]);
+    }
+    this.ctx.stroke();
+
+    this.ctx.strokeStyle = 'rgba(255,255,255,.9)';
+    this.ctx.lineWidth = 2;
+    this.ctx.beginPath();
+    this.ctx.arc(cx, cy, R, 0, 6.28);
+    this.ctx.stroke();
+    this.ctx.restore();
+
+    // 5. Two-Line ISO Wordmark + Standard Number (Unified Centered Block)
+    const blockAlpha = this.reducedMotion ? 1 : Math.min(1, Math.max(0, (t - 0.4) / 0.8));
+    if (blockAlpha > 0) {
+      this.ctx.save();
+      this.ctx.globalAlpha = blockAlpha;
+      this.ctx.textBaseline = 'alphabetic';
+
+      // Line 1: Elegant, Widened ISO (Cached font, metrics, tracking, no per-frame measureText)
+      this.ctx.font = this.isoFont;
+      this.ctx.shadowColor = 'rgba(120,190,255,.55)';
+      this.ctx.shadowBlur = 10;
+      this.ctx.fillStyle = '#ffffff';
+
+      this.ctx.save();
+      this.ctx.translate(cx, this.isoBaseline);
+      this.ctx.textAlign = 'left';
+
+      let curX = -this.isoTotalRawWidth / 2;
+      this.ctx.fillText('I', curX, 0);
+      curX += this.mI + this.tracking;
+      this.ctx.fillText('S', curX, 0);
+      curX += this.mS + this.tracking;
+      this.ctx.fillText('O', curX, 0);
+      this.ctx.restore();
+
+      // Line 2: Standard Number (Barlow Condensed 700 - Centered cleanly under ISO)
+      this.ctx.font = this.numberFont;
+      this.ctx.textAlign = 'center';
+      this.ctx.shadowColor = 'rgba(140,205,255,.45)';
+      this.ctx.shadowBlur = 6;
+      this.ctx.fillStyle = 'rgba(244,248,255,0.92)';
+      this.ctx.fillText(ISO_STANDARD, cx, this.numberBaseline);
+
+      this.ctx.restore();
+    }
+  }
+
+  renderStatic() {
+    this.render(this.t0 + 10000);
+  }
+
+  frame(now) {
+    if (!this.running) return;
+    this.rafId = requestAnimationFrame(this.boundFrame);
+
+    const delta = now - this.lastFrameTime;
+    if (delta < this.frameInterval) return;
+    this.lastFrameTime = now - (delta % this.frameInterval);
+
+    this.render(now);
+  }
+
+  start() {
+    if (this.reducedMotion) {
+      this.renderStatic();
+      return;
+    }
+    if (this.running) return;
+    if (this.rafId) {
+      cancelAnimationFrame(this.rafId);
+      this.rafId = null;
+    }
+    this.running = true;
+    this.lastFrameTime = performance.now();
+    this.rafId = requestAnimationFrame(this.boundFrame);
+  }
+
+  pause() {
+    this.running = false;
+    if (this.rafId) {
+      cancelAnimationFrame(this.rafId);
+      this.rafId = null;
+    }
+  }
+
+  resume() {
+    if (this.reducedMotion) {
+      this.renderStatic();
+      return;
+    }
+    if (this.running) return;
+    if (this.heroVisible && !document.hidden) {
+      this.start();
+    }
+  }
+
+  onVisibilityChange(isVisible) {
+    if (this.heroVisible === isVisible) return;
+    this.heroVisible = isVisible;
+    if (isVisible) {
+      this.resume();
+    } else {
+      this.pause();
+    }
+  }
+}
+
+/* ==========================================================================
+   Module 3: Application Orchestrator & Lifecycle Management
+   ========================================================================== */
+(function () {
+  const isReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // 1. Reference Marquee Architecture (Two Identical Halves, 35 px/sec, GPU transform)
+  const STANDARDS = ['27001','27701','22301','27017','27018','27034','27035','20000-1','9001','14001','45001','31000','38500','42001','56001','10002','19770'];
+  const isoUrl = n => '/iso-' + n;
+  const GLOBE = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><ellipse cx="12" cy="12" rx="4" ry="9.5"/><path d="M2.5 12h19M4.2 7h15.6M4.2 17h15.6"/></svg>';
+
+  function createSingleSequenceHtml() {
+    let str = '';
+    STANDARDS.forEach(n => {
+      str += `<a href="${isoUrl(n)}">ISO ${n}</a>${GLOBE}`;
+    });
+    return str;
+  }
+
+  let lastTickerWidth = 0;
+  let marqueeInitialized = false;
+
+  function buildMarquee(force = false) {
+    const container = document.getElementById("identity");
+    const track = document.getElementById("ticker-track");
+    if (!container || !track) return;
+
+    const currentWidth = container.clientWidth || window.innerWidth;
+    if (!force && marqueeInitialized && Math.abs(currentWidth - lastTickerWidth) < 2) {
+      return;
+    }
+    lastTickerWidth = currentWidth;
+
+    const singleSeq = createSingleSequenceHtml();
+    track.innerHTML = '';
+
+    // Measure single sequence once to calculate required repetitions mathematically (zero layout thrashing)
+    const group1 = document.createElement('div');
+    group1.className = 'ticker-group';
+    group1.innerHTML = singleSeq;
+    track.appendChild(group1);
+
+    // Layout Read 1: single sequence width
+    const singleSeqWidth = group1.getBoundingClientRect().width;
+    const targetMin = currentWidth * 1.15;
+    const repeats = Math.max(1, Math.ceil(targetMin / (singleSeqWidth || 1)));
+
+    if (repeats > 1) {
+      group1.innerHTML = singleSeq.repeat(repeats);
+    }
+
+    // Duplicate Group 1 exactly once to create Group 2 (Exactly two identical logical halves)
+    const group2 = group1.cloneNode(true);
+    group2.setAttribute('aria-hidden', 'true');
+    group2.querySelectorAll('a').forEach(a => a.setAttribute('tabindex', '-1'));
+    track.appendChild(group2);
+
+    // Layout Read 2: final exact loop distance = group1 width
+    const exactGroupWidth = group1.getBoundingClientRect().width;
+    const duration = exactGroupWidth / 35; // Constant 35 pixels per second
+
+    track.style.setProperty('--dist', `${exactGroupWidth.toFixed(2)}px`);
+    track.style.setProperty('--dur', `${duration.toFixed(2)}s`);
+
+    marqueeInitialized = true;
+  }
+  buildMarquee(true);
+
+  // 2. Initialize Custom ISO Canvas Engine
+  const cv = document.getElementById('cv');
+  const hero = document.getElementById('hero');
+  const engine = new IsoCanvasEngine(cv, hero);
+  engine.resize();
+  engine.start();
+
+  // 3. Initialize Particle System
+  ParticleManager.init(true);
+
+  // 4. Font Ready Safeguard: Seamlessly update text metrics and marquee once webfonts load
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(() => {
+      engine.cachedR = 0; // Invalidate engine cached text metrics
+      const track = document.getElementById("ticker-track");
+      if (track && track.children.length >= 2) {
+        const group1 = track.children[0];
+        const exactGroupWidth = group1.getBoundingClientRect().width;
+        const currentDist = parseFloat(track.style.getPropertyValue('--dist') || '0');
+        if (Math.abs(exactGroupWidth - currentDist) > 1) {
+          const duration = exactGroupWidth / 35;
+          track.style.setProperty('--dist', `${exactGroupWidth.toFixed(2)}px`);
+          track.style.setProperty('--dur', `${duration.toFixed(2)}s`);
+        }
+      } else {
+        buildMarquee(true);
+      }
+      if (engine.reducedMotion) {
+        engine.renderStatic();
+      }
+    });
+  }
+
+  // 5. Coordinated Resize Handling via ResizeObserver & RAF Throttling
+  let resizeRaf = null;
+  function handleCoordinatedResize() {
+    if (resizeRaf) cancelAnimationFrame(resizeRaf);
+    resizeRaf = requestAnimationFrame(() => {
+      engine.resize();
+      ParticleManager.onResize();
+      buildMarquee(false);
+    });
+  }
+
+  if (window.ResizeObserver) {
+    const ro = new ResizeObserver(() => {
+      handleCoordinatedResize();
+    });
+    ro.observe(hero);
+  } else {
+    window.addEventListener('resize', handleCoordinatedResize, { passive: true });
+  }
+  window.addEventListener('orientationchange', handleCoordinatedResize, { passive: true });
+
+  // 6. Viewport Intersection Observer (Clean Off-Screen Pausing)
+  let lastHeroVisible = null;
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      const entry = entries[entries.length - 1];
+      const isVisible = entry.isIntersecting && entry.intersectionRatio > 0.05;
+      if (isVisible === lastHeroVisible) return;
+      lastHeroVisible = isVisible;
+
+      engine.onVisibilityChange(isVisible);
+      if (isVisible) {
+        if (!isReduced && !document.hidden) ParticleManager.resume();
+      } else {
+        ParticleManager.pause();
+      }
+    }, { threshold: [0, 0.05, 0.1] });
+    observer.observe(hero);
+  }
+
+  // 7. Page Visibility Listener (Tab Inactive Pausing)
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      engine.pause();
+      ParticleManager.pause();
+    } else {
+      if (engine.heroVisible && !isReduced) {
+        engine.resume();
+        ParticleManager.resume();
+      }
+    }
+  });
 })();
 </script>
 </body>

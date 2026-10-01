@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ISO | Great things happen when the world agrees</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--deep:#06235a;--mid:#1458b8;--ink:#f4f8ff;--mute:#b6c9ea;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--deep:#041a45}}
+:root[data-theme="dark"]{--deep:#041a45}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--deep);color:var(--ink);font-family:Barlow,system-ui,-apple-system,sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+.hero{position:relative;height:540px;display:grid;place-items:center;padding:3.2rem 1.25rem 2rem;background:radial-gradient(80% 90% at 50% 45%,var(--mid) 0%,var(--deep) 72%);overflow:hidden}
+@media(max-width:768px){.hero{height:auto;min-height:480px;padding:4rem 1rem 2.2rem}}
+#particles-js,#cv{position:absolute;inset:0;width:100%;height:100%}
+#particles-js{z-index:1}
+#cv{z-index:2;pointer-events:none}
+nav.crumb{position:absolute;top:1rem;left:1.25rem;z-index:3;display:flex;flex-wrap:wrap;gap:.5rem;font-size:.95rem;color:var(--mute);opacity:0;animation:fade .8s .2s forwards}
+nav.crumb a{color:inherit;text-decoration:none;transition:color .2s}
+nav.crumb a:hover{color:#fff}
+nav.crumb a:focus-visible{outline:2px solid #fff;outline-offset:3px;border-radius:2px}
+nav.crumb b{color:#fff;font-weight:600}
+nav.crumb .sep{opacity:.6}
+.copy{position:relative;z-index:3;text-align:center;max-width:58rem;pointer-events:none}
+h1{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:clamp(2.6rem,7vw,5.6rem);line-height:1.02;text-shadow:0 2px 30px rgba(4,26,69,.9)}
+h1 .w{display:inline-block;margin:0 .14em;opacity:0;animation:up .8s forwards}
+.sub{margin-top:1.4rem;font-weight:500;font-size:clamp(.95rem,1.6vw,1.2rem);color:var(--mute);opacity:0;animation:up .8s 1.5s forwards;text-shadow:0 0 20px rgba(4,26,69,.9)}
+@keyframes up{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@keyframes fade{to{opacity:1}}
+.motto{position:relative;z-index:4;background:#fff;color:#0a2e6e;overflow:hidden;white-space:nowrap;padding:.85rem 0;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:clamp(1.05rem,2vw,1.45rem);letter-spacing:.06em}
+.track{display:flex;width:max-content;animation:slide var(--dur,35s) linear infinite}
+.grp{display:flex;flex-shrink:0}
+.grp em{font-style:normal;margin-right:2.5rem}
+@keyframes slide{from{transform:translateX(0)}to{transform:translateX(calc(-1*var(--dist,50%)))}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01s!important;animation-delay:0s!important;animation-iteration-count:1!important}.track{animation:none!important}}
+</style>
+</head>
+<body>
+<section class="hero" id="hero">
+  <div id="particles-js" aria-hidden="true"></div>
+  <canvas id="cv" aria-hidden="true"></canvas>
+  <nav class="crumb" aria-label="Breadcrumb">
+    <a href="#">Home</a><span class="sep" aria-hidden="true">&gt;</span>
+    <a href="#">Standards</a><span class="sep" aria-hidden="true">&gt;</span>
+    <b>ISO</b>
+  </nav>
+  <div class="copy">
+    <h1 id="title" aria-label="Great things happen when the world agrees"></h1>
+    <p class="sub">International Organization for Standardization</p>
+  </div>
+</section>
+<div class="motto" id="identity" aria-label="ISO in English, French and Russian"><div class="track" id="track"></div></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+<script>
+(function(){
+  const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* Slogan, word by word */
+  const T=document.getElementById('title');
+  'Great things happen when the world agrees.'.split(' ').forEach((wd,i)=>{
+    const s=document.createElement('span');s.className='w';s.textContent=wd;
+    if(reduced){s.style.opacity=1;s.style.transform='none'}else s.style.animationDelay=(0.6+i*0.12)+'s';
+    T.appendChild(s);
+  });
+
+  /* Marquee */
+  const items=['Great things happen when the world agrees','\u2605','International Organization for Standardization','\u2605','Organisation internationale de normalisation','\u2605','Международная организация по стандартизации','\u2605'];
+  const mq=document.getElementById('identity'),tr=document.getElementById('track');
+  const grp=(h)=>{let g=`<div class="grp"${h?' aria-hidden="true"':''}>`;items.forEach(x=>g+=`<em>${x}</em>`);return g+'</div>'};
+  let lw=0;
+  function build(){
+    const w=mq.clientWidth;if(w===lw&&tr.children.length)return;lw=w;
+    tr.innerHTML=grp(false)+grp(true);
+    const gw=tr.firstElementChild.offsetWidth;
+    tr.style.setProperty('--dist',gw+'px');tr.style.setProperty('--dur',(gw/70).toFixed(2)+'s');
+  }
+  build();
+
+  /* Particles, same behaviour as the previous hero */
+  function pjs(){
+    const w=innerWidth,mobile=w<768,tablet=w>=768&&w<=1200;
+    const count=mobile?16:tablet?26:36,dist=mobile?80:tablet?100:120;
+    const canHover=matchMedia('(hover: hover)').matches&&!reduced&&!mobile;
+    try{
+      if(window.pJSDom&&pJSDom.length){pJSDom.forEach(p=>p.pJS.fn.vendors.destroypJS());window.pJSDom=[]}
+      particlesJS('particles-js',{
+        particles:{
+          number:{value:count,density:{enable:false}},
+          color:{value:['#ffffff','#bcd4ff','#7fb0ff']},
+          shape:{type:['circle','star'],polygon:{nb_sides:5}},
+          opacity:{value:.7,random:true,anim:{enable:!reduced,speed:1,opacity_min:.25,sync:false}},
+          size:{value:3.5,random:true,anim:{enable:!reduced,speed:2,size_min:1,sync:false}},
+          line_linked:{enable:w>=480,distance:dist,color:'#a9c8ff',opacity:.35,width:1},
+          move:{enable:!reduced,speed:mobile?1.6:2,direction:'none',random:false,straight:false,out_mode:'out',bounce:false}
+        },
+        interactivity:{detect_on:'canvas',events:{onhover:{enable:canHover,mode:'grab'},onclick:{enable:false},resize:false},modes:{grab:{distance:160,line_linked:{opacity:.8}}}},
+        retina_detect:false
+      });
+    }catch(e){console.warn(e)}
+  }
+  pjs();
+
+  /* Wireframe globe: parallels and meridians, slow spin */
+  const cv=document.getElementById('cv'),hero=document.getElementById('hero'),ctx=cv.getContext('2d');
+  let W,H,dpr,raf=null,visible=true,t0=performance.now(),last=0;
+  const TILT=.38;
+  function size(){
+    dpr=Math.min(devicePixelRatio||1,1.5);W=hero.clientWidth;H=hero.clientHeight;
+    cv.width=W*dpr;cv.height=H*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);
+    if(reduced)draw(t0+10000);
+  }
+  function proj(lat,lon,rot,R,cx,cy){
+    const x=Math.cos(lat)*Math.sin(lon+rot),y=Math.sin(lat),z=Math.cos(lat)*Math.cos(lon+rot);
+    const y2=y*Math.cos(TILT)-z*Math.sin(TILT),z2=y*Math.sin(TILT)+z*Math.cos(TILT);
+    return [cx+x*R,cy-y2*R,z2];
+  }
+  function line(pts){
+    for(let i=1;i<pts.length;i++){
+      const a=pts[i-1],b=pts[i],front=(a[2]+b[2])/2>0;
+      ctx.strokeStyle=front?'rgba(255,255,255,.34)':'rgba(255,255,255,.07)';
+      ctx.beginPath();ctx.moveTo(a[0],a[1]);ctx.lineTo(b[0],b[1]);ctx.stroke();
+    }
+  }
+  function draw(now){
+    const t=(now-t0)/1000;ctx.clearRect(0,0,W,H);
+    const p=reduced?1:Math.min(1,t/1.6),e=1-Math.pow(1-p,3);
+    const R=Math.min(W*.42,H*.46)*e,cx=W/2,cy=H/2,rot=reduced?0:t*.12;
+    if(R<2)return;
+    ctx.lineWidth=1.1;
+    const D=Math.PI/180;
+    for(let lat=-60;lat<=60;lat+=30){const pts=[];for(let lo=0;lo<=360;lo+=6)pts.push(proj(lat*D,lo*D,rot,R,cx,cy));line(pts)}
+    for(let lon=0;lon<180;lon+=22.5){
+      const pts=[];for(let la=-90;la<=270;la+=6)pts.push(proj((la>90?180-la:la)*D,(lon+(la>90?180:0))*D,rot,R,cx,cy));line(pts);
+    }
+    ctx.strokeStyle='rgba(255,255,255,.5)';ctx.lineWidth=1.6;
+    ctx.beginPath();ctx.arc(cx,cy,R,0,6.28);ctx.stroke();
+  }
+  function frame(now){if(!visible)return;raf=requestAnimationFrame(frame);if(now-last<33)return;last=now;draw(now)}
+  function start(){if(reduced){draw(t0+10000);return}if(!raf)raf=requestAnimationFrame(frame)}
+  function stop(){if(raf){cancelAnimationFrame(raf);raf=null}}
+  size();start();
+
+  let rr=null,tier=null;
+  addEventListener('resize',()=>{cancelAnimationFrame(rr);rr=requestAnimationFrame(()=>{size();build();pjs()})},{passive:true});
+  if('IntersectionObserver' in window)new IntersectionObserver(es=>{visible=es[0].isIntersecting;visible?start():stop()},{threshold:[0,.05]}).observe(hero);
+  document.addEventListener('visibilitychange',()=>{document.hidden?stop():(visible&&start())});
+})();
+</script>
+</body>
+</html>
